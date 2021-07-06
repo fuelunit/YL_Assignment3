@@ -25,4 +25,10 @@ public class DailyAppointment extends Appointment{
                             LocalDate endDate) {
         super(description, startDate, endDate);
     }
+
+    @Override
+    public boolean occursOn(LocalDate date) {
+
+        return false;
+    }
 }

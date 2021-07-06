@@ -55,4 +55,19 @@ public class Appointment {
     public LocalDate getEndDate() {
         return this.endDate;
     }
+
+    /**
+     * An appointment object can check if it occurs on a date
+     * using occursOn method. The detailed algorithm depends
+     * on the type of appointment.
+     *
+     * @param date
+     *      {@code LocalDate}
+     *
+     * @return boolean
+     */
+    public boolean occursOn(LocalDate date) {
+
+        return false;
+    }
 }
