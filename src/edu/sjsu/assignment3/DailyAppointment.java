@@ -28,7 +28,7 @@ public class DailyAppointment extends Appointment{
 
     @Override
     public boolean occursOn(LocalDate date) {
-
-        return false;
+        return (date.compareTo(this.startDate) >= 0
+                && date.compareTo(this.endDate) <= 0);
     }
 }

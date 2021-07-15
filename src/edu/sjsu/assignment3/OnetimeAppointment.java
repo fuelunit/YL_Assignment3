@@ -24,7 +24,6 @@ public class OnetimeAppointment extends Appointment {
 
     @Override
     public boolean occursOn(LocalDate date) {
-
-        return false;
+        return (date.compareTo(this.startDate) == 0);
     }
 }

@@ -67,7 +67,7 @@ public class Appointment {
      * @return boolean
      */
     public boolean occursOn(LocalDate date) {
-
-        return false;
+        return (date.compareTo(this.startDate) >= 0
+                && date.compareTo(this.endDate) <= 0);
     }
 }
