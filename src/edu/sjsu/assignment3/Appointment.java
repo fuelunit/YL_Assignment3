@@ -57,6 +57,8 @@ public abstract class Appointment implements Comparable<Appointment> {
     }
 
     /**
+     * This is an abstract method.
+     *
      * An appointment object can check if it occurs on a date
      * using occursOn method. The detailed algorithm depends
      * on the type of appointment.
@@ -66,7 +68,7 @@ public abstract class Appointment implements Comparable<Appointment> {
      *
      * @return boolean
      */
-    abstract boolean occursOn(LocalDate date);
+    public abstract boolean occursOn(LocalDate date);
 
     /**
      * Overriden compareTo method orders {@code Appointment} by the
