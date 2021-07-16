@@ -40,6 +40,22 @@ public class Main {
                 + appointment2.occursOn(testDate2)); // true
         System.out.println("Test Date 3 is "
                 + appointment2.occursOn(testDate3)); // false (after the end date)
+        // Example 3
+        System.out.println("--- Example 3 ---");
+        Appointment appointment3 = new MonthlyAppointment("Meeting",
+                startDate, endDate);
+        System.out.println("Test Date 1 is "
+                + appointment3.occursOn(testDate1)); // false (day of month not same)
+        System.out.println("Test Date 2 is "
+                + appointment3.occursOn(testDate2)); // true
+        System.out.println("Test Date 3 is "
+                + appointment3.occursOn(testDate3)); // false (after the end date)
+        // Part 3 Tests:
+        System.out.println("=== Assignment 3 Part 3 Tests ===");
+        System.out.println("appointment1 compared to appointment 2: "
+                + appointment1.compareTo(appointment2));
+        // Part 4 Tests:
+        System.out.println("=== Assignment 3 Part 4 Tests ===");
 
     }
 }

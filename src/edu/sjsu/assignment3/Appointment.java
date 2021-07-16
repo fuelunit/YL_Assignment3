@@ -8,7 +8,7 @@ package edu.sjsu.assignment3;
 
 import java.time.LocalDate;
 
-public class Appointment {
+public class Appointment implements Comparable<Appointment> {
     protected String description;
     protected LocalDate startDate;
     protected LocalDate endDate;
@@ -69,5 +69,16 @@ public class Appointment {
     public boolean occursOn(LocalDate date) {
         return (date.compareTo(this.startDate) >= 0
                 && date.compareTo(this.endDate) <= 0);
+    }
+
+    @Override
+    public int compareTo(Appointment o) {
+        if (!this.startDate.equals(o.getStartDate())) {
+            return this.startDate.compareTo(o.getStartDate());
+        } else if (!this.endDate.equals(o.getEndDate())) {
+            return this.endDate.compareTo(o.getEndDate());
+        } else {
+            return this.description.compareTo(o.getDescription());
+        }
     }
 }
