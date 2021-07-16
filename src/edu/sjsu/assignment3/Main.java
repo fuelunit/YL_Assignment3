@@ -49,7 +49,7 @@ public class Main {
         System.out.println("Test Date 2 is "
                 + appointment3.occursOn(testDate2)); // true
         System.out.println("Test Date 3 is "
-                + appointment3.occursOn(testDate3)); // false (after the end date)
+                + appointment3.occursOn(testDate3)); // false (after the end date)s
         // Part 3 Tests:
         System.out.println("=== Assignment 3 Part 3 Tests ===");
         System.out.println("appointment1 compared to appointment 2: "

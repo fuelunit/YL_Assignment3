@@ -9,6 +9,20 @@ package edu.sjsu.assignment3;
 import java.util.Comparator;
 
 public class DesComparator implements Comparator<Appointment> {
+    /**
+     * Overriden compare method for DesComparator that will compare the
+     * description first, then start date, finally end date. That is,
+     * override the compare method.
+     *
+     * @param o1
+     *      {@code Appointment}
+     *
+     * @param o2
+     *      {@code Appointment}
+     *
+     * @return
+     *      int
+     */
     @Override
     public int compare(Appointment o1, Appointment o2) {
         if (!o1.getDescription().equals(o2.getDescription())) {

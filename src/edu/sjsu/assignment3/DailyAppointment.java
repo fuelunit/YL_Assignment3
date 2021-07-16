@@ -26,6 +26,14 @@ public class DailyAppointment extends Appointment{
         super(description, startDate, endDate);
     }
 
+    /**
+     * Check if the input is between the start and end date (inclusive)
+     *
+     * @param date
+     *      {@code LocalDate}
+     *
+     * @return boolean
+     */
     @Override
     public boolean occursOn(LocalDate date) {
         return (date.compareTo(this.startDate) >= 0

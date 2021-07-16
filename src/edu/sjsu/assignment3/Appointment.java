@@ -8,7 +8,7 @@ package edu.sjsu.assignment3;
 
 import java.time.LocalDate;
 
-public class Appointment implements Comparable<Appointment> {
+public abstract class Appointment implements Comparable<Appointment> {
     protected String description;
     protected LocalDate startDate;
     protected LocalDate endDate;
@@ -66,11 +66,20 @@ public class Appointment implements Comparable<Appointment> {
      *
      * @return boolean
      */
-    public boolean occursOn(LocalDate date) {
-        return (date.compareTo(this.startDate) >= 0
-                && date.compareTo(this.endDate) <= 0);
-    }
+    abstract boolean occursOn(LocalDate date);
 
+    /**
+     * Overriden compareTo method orders {@code Appointment} by the
+     * start date first, then the end date, finally the description.
+     * That is, if the start dates are the same, then compare the
+     * end date, and so on
+     *
+     * @param o
+     *      {@code Appointment}
+     *
+     * @return
+     *      int
+     */
     @Override
     public int compareTo(Appointment o) {
         if (!this.startDate.equals(o.getStartDate())) {

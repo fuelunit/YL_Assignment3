@@ -26,6 +26,16 @@ public class MonthlyAppointment extends Appointment {
         super(description, startDate, endDate);
     }
 
+    /**
+     * Check if the input is between the start and end date (inclusive)
+     * AND the day of the input date is the same as the day of the
+     * start date of the appointment.
+     *
+     * @param date
+     *      {@code LocalDate}
+     *
+     * @return boolean
+     */
     @Override
     public boolean occursOn(LocalDate date) {
         return (date.compareTo(this.startDate) >= 0

@@ -22,6 +22,15 @@ public class OnetimeAppointment extends Appointment {
         super(description, startDate, startDate);
     }
 
+    /**
+     * Check if the input is the exactly same as the start date
+     * (and end date) of appointment
+     *
+     * @param date
+     *      {@code LocalDate}
+     *
+     * @return boolean
+     */
     @Override
     public boolean occursOn(LocalDate date) {
         return (date.compareTo(this.startDate) == 0);
