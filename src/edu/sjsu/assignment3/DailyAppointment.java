@@ -36,7 +36,6 @@ public class DailyAppointment extends Appointment{
      */
     @Override
     public boolean occursOn(LocalDate date) {
-        return (date.compareTo(this.startDate) >= 0
-                && date.compareTo(this.endDate) <= 0);
+        return (this.isInBetweenInclusive(this.startDate, this.endDate, date));
     }
 }

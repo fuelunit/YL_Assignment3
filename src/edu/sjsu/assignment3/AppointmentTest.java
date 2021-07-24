@@ -9,6 +9,7 @@ package edu.sjsu.assignment3;
 import org.junit.Assert;
 import org.junit.Test;
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class AppointmentTest {
     // startDate and endDate
@@ -28,24 +29,24 @@ public class AppointmentTest {
         Appointment appointment1 = new OnetimeAppointment("Class starts",
                 startDate);
         // Assert
-        Assert.assertEquals(false, appointment1.occursOn(testDate1));
-        Assert.assertEquals(false, appointment1.occursOn(testDate2));
-        Assert.assertEquals(false, appointment1.occursOn(testDate3));
+        Assert.assertFalse(appointment1.occursOn(testDate1));
+        Assert.assertFalse(appointment1.occursOn(testDate2));
+        Assert.assertFalse(appointment1.occursOn(testDate3));
         // Example 2
         Appointment appointment2 = new DailyAppointment("Class",
                 startDate, endDate);
         // Assert
-        Assert.assertEquals(true, appointment2.occursOn(testDate1));
-        Assert.assertEquals(true, appointment2.occursOn(testDate2));
-        Assert.assertEquals(false, appointment2.occursOn(testDate3));
+        Assert.assertTrue(appointment2.occursOn(testDate1));
+        Assert.assertTrue(appointment2.occursOn(testDate2));
+        Assert.assertFalse(appointment2.occursOn(testDate3));
 
         // Example 3
         Appointment appointment3 = new MonthlyAppointment("Meeting",
                 startDate, endDate);
         // Assert
-        Assert.assertEquals(false, appointment3.occursOn(testDate1));
-        Assert.assertEquals(true, appointment3.occursOn(testDate2));
-        Assert.assertEquals(false, appointment3.occursOn(testDate3));
+        Assert.assertFalse(appointment3.occursOn(testDate1));
+        Assert.assertTrue(appointment3.occursOn(testDate2));
+        Assert.assertFalse(appointment3.occursOn(testDate3));
     }
 
     /**
@@ -66,5 +67,7 @@ public class AppointmentTest {
         Assert.assertEquals(-10, appointment2.compareTo(appointment3));
         Assert.assertEquals(2,   appointment3.compareTo(appointment1));
         Assert.assertEquals(10,  appointment3.compareTo(appointment2));
+        //Appointment[] myArr = {};
+        //Arrays.sort();
     }
 }

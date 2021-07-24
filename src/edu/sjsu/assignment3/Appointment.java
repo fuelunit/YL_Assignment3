@@ -92,4 +92,27 @@ public abstract class Appointment implements Comparable<Appointment> {
             return this.description.compareTo(o.getDescription());
         }
     }
+
+    /**
+     * Checks if the date to compare (toCompare) is in between
+     * startDate and endDate, inclusive.
+     *
+     * @param startDate
+     *      {@code LocalDate} start
+     *
+     * @param endDate
+     *      {@code LocalDate} end
+     *
+     * @param toCompare
+     *      {@code LocalDate} in question
+     *
+     * @return
+     *      Returns true if toCompare is indeed in between,
+     *      and vice versa.
+     */
+    protected boolean isInBetweenInclusive(LocalDate startDate,
+                                           LocalDate endDate, LocalDate toCompare) {
+        return (toCompare.compareTo(startDate) >= 0
+                && toCompare.compareTo(endDate) <= 0);
+    }
 }
